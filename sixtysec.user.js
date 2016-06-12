@@ -8,8 +8,9 @@
 if(document.getElementsByClassName("errorlist").length == 1){
   if(document.getElementsByClassName("errorlist")[0].children[0].innerHTML == "Sorry, you have to wait 60 seconds between posts."){
     try{
-      if(document.getElementById("id_body").innerHTML.substr(ocument.getElementById("id_body").innerHTML.length - 78) != "\n[small]This post encountered the 60 second rule, but a bot hepled out[/small]"){
+      if(document.getElementById("id_body").innerHTML.substr(document.getElementById("id_body").innerHTML.length - 78) != "\n[small]This post encountered the 60 second rule, but a bot hepled out[/small]"){
         document.getElementById("id_body").innerHTML += "\n[small]This post encountered the 60 second rule, but a bot hepled out[/small]";
+        console.log(document.getElementById("id_body").innerHTML.substr(ocument.getElementById("id_body").innerHTML.length - 78));
       }
     } catch(e){
       document.getElementById("id_body").innerHTML += "\n[small]This post encountered the 60 second rule, but a bot hepled out[/small]";
