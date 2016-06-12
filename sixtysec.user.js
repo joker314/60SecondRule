@@ -7,8 +7,16 @@
 // ==/UserScript==
 if(document.getElementsByClassName("errorlist").length == 1){
   if(document.getElementsByClassName("errorlist")[0].children[0].innerHTML == "Sorry, you have to wait 60 seconds between posts."){
-    var n = window.setInterval(function(){document.getElementsByName("AddPostForm")[0].click();}, 10000);
-    document.getElementsByClassName("errorlist")[0].children[0].innerHTML += "<button onclick='window.clearTimeout(n);>Cancel Userscript</button>";
+    window.n = window.setInterval(function(){document.getElementsByName("AddPostForm")[0].click();}, 10000);
+    var g = document.createElement("BUTTON");
+    g.innerHTML = "Cancel Userscript";
+    g.addEventListener("click", function(){
+      g.width = 0;
+      g.height = 0;
+      window.clearTimeout(window.n);
+
+    });
+    document.getElementsByClassName("errorlist")[0].children[0].appendChild(g);
   }
 }
 
