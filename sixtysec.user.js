@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name 60 Second Rule
 // @namespace http://joker314.github.io
-// @version 1.0
+// @version 1.1
 // @description  Spams the submit button every 10 seconds until the forum post submits
 // @match *://scratch.mit.edu/*
 // ==/UserScript==
@@ -13,7 +13,7 @@ if(document.getElementsByClassName("errorlist").length == 1){
     g.addEventListener("click", function(){
       g.width = 0;
       g.height = 0;
-      window.clearTimeout(window.n);
+      window.clearInterval(window.n);
 
     });
     document.getElementsByClassName("errorlist")[0].children[0].appendChild(g);
